@@ -4,15 +4,19 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>EF Fotografía Profesional</title>
+    <title>FocusPro</title>
+
     <link rel="stylesheet" type="text/css" href="main.css">
     <link rel="icon" href="Assert/Favicon-3.png" type="image/png">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
 </head>
 <body>
     <header>
         <div class="container header">
             <div class="logo">
                 <img src="Assert/Favicon-3.png" alt="Logo EF Fotografía">
+                <h1>Focus Pro</h1>
             </div>
             <nav class="menu">
                 <a href="../Galeria/galeria.html">Mi Galería</a>
@@ -21,13 +25,13 @@
         </div>
     </header>
 
-    
-    <main class="contenedor-principal">
-        <div class="contenedor-imagenes">
-            <img src="Assert/Fondo-Main.jpg" alt="Cámara de fondo" class="fondo-camara">
-            
-            <div class="imagen-leon">
-                <img src="Assert/Imagen Leon.jpg" alt="León sobre una jirafa">
+    <main>
+        <div class="contenedor-principal">
+            <div class="flipper-container">
+                <div class="flipper">
+                    <img src="Assert/Imagen Leon.jpg" alt="León sobre una jirafa" class="front"/>
+                    <img src="Assert/Welcome.jpg" alt="Welcome Dog" class="back"/>
+                </div>
             </div>
         </div>
     </main>
@@ -35,14 +39,16 @@
     <footer>
         <div class="container footer">
             <div class="copyRight">
-                &copy; 2024 EF Fotografía Profesional
+                &copy; 2024 Focus Pro
             </div>
             <div class="redesSociales">
-                <a href="#">Facebook</a>
-                <a href="#">Instagram</a>
-                <a href="#">Twitter</a>
+                <a href="#" class="icon facebook" title="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="icon instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="icon twitter" title="Twitter"><i class="fab fa-twitter"></i></a>
             </div>
         </div>
     </footer>
+    
+    
 </body>
 </html>
