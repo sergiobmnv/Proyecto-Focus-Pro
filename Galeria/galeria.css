@@ -1,7 +1,6 @@
 * {
     margin: 0;
     padding: 0;
-    
 }
 
 body {
@@ -59,16 +58,13 @@ h1 {
     overflow: hidden;
 }
 
-/* Asegúrate de que las imágenes no se repitan y que cubran toda la pantalla */
-.background-container {
-    background-repeat: no-repeat;
-}
 .background-image {
     width: 100%;
     height: 100vh;
     object-fit: cover;
 }
 
+/* Estilo de la galería */
 .galeria {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -80,69 +76,98 @@ h1 {
     width: 80%;
 }
 
-/* Estilos para las imágenes */
+/* Estilo para las imágenes */
 .imagenes {
     position: relative;
     width: 100%;
     height: 250px;
     overflow: hidden;
     border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.823);
+}
+
+/* Contenedor flip card */
+.flip-card {
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    perspective: 1000px;
+}
+
+/* Contenedor interior para el flip */
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+/* Efecto de voltear al pasar el ratón */
+.imagenes:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Cara frontal de la tarjeta */
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
+/* Cara frontal */
+.flip-card-front {
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Cara trasera */
+.flip-card-back {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    transform: rotateY(180deg);
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Imagen en la cara frontal */
 .foto {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.3s ease-in-out;
+    border-radius: 10px;
 }
 
-/* Efecto hover sobre las fotos */
-.imagenes:hover .foto {
-    transform: scale(1.1);
-}
-
-/* Contenedor de la información en hover */
-.hover-info {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 20px;
-    display: none;
-    border-radius: 0 0 10px 10px;
-}
-
-.imagenes:hover .hover-info {
-    display: block;
-}
-
-a {
+.back-link {
     color: #fff;
     font-size: 18px;
     font-weight: bold;
     text-decoration: none;
     padding: 10px 20px;
-    border-radius: 25px;
+    border-radius: 30px;
     background-color: #00d9ff;
     display: inline-block;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    margin-right: 20px;
+    transition: 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* Efecto cuando el ratón pasa sobre el enlace */
-a:hover {
+.back-link:hover {
     background-color: #0659be;
     transform: scale(1.1);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
-    color: #fff;
 }
 
-/* Efecto de enfoque (cuando el enlace tiene foco) */
-a:focus {
+.back-link:focus {
     outline: none;
-    box-shadow: 0 0 0 4px rgba(255, 64, 129, 0.5); 
+    box-shadow: 0 0 0 4px rgba(255, 64, 129, 0.5);
 }
+
