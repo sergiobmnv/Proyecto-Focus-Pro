@@ -1,16 +1,22 @@
-// Selección de elementos
-const overlay = document.getElementById('overlay');
-const openOverlayButtons = document.querySelectorAll('.flip-card-back p:nth-child(3)'); // Selecciona los elementos de comentarios
-const closeOverlayButton = document.querySelector('.close-overlay');
+// Selecciona el modal y los botones
+const modal = document.getElementById('modal');
+const openModal = document.querySelector('.open-modal');
+const closeModal = document.querySelector('.close-modal');
 
-// Mostrar el overlay al hacer clic en los comentarios
-openOverlayButtons.forEach((button) => {
-    button.addEventListener('click', () => {
-        overlay.style.display = 'flex'; // Muestra el overlay
-    });
+// Abre el modal al hacer clic en el texto de comentarios
+openModal.addEventListener('click', () => {
+    modal.style.display = 'flex'; // Muestra el modal
 });
 
-// Ocultar el overlay al hacer clic en el botón de cerrar
-closeOverlayButton.addEventListener('click', () => {
-    overlay.style.display = 'none'; // Oculta el overlay
+// Cierra el modal al hacer clic en el botón "×"
+closeModal.addEventListener('click', () => {
+    modal.style.display = 'none'; // Oculta el modal
 });
+
+// Cierra el modal si se hace clic fuera del contenido
+window.addEventListener('click', (e) => {
+    if (e.target === modal) {
+        modal.style.display = 'none';
+    }
+});
+
