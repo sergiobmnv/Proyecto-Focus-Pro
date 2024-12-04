@@ -5,12 +5,12 @@ const closeModal = document.querySelector('.close-modal');
 
 // Abre el modal al hacer clic en el texto de comentarios
 openModal.addEventListener('click', () => {
-    modal.style.display = 'flex'; // Muestra el modal
+    modal.style.display = 'flex';
 });
 
 // Cierra el modal al hacer clic en el botón "×"
 closeModal.addEventListener('click', () => {
-    modal.style.display = 'none'; // Oculta el modal
+    modal.style.display = 'none';
 });
 
 // Cierra el modal si se hace clic fuera del contenido

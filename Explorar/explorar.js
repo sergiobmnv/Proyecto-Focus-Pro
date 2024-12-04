@@ -1,24 +1,27 @@
-// Función para abrir el modal y actualizar la información
-function openModal(name, location, age, posts) {
-    // Actualizar el contenido del modal con los datos del usuario
-    document.getElementById("user-name").textContent = name;
-    document.getElementById("user-location").textContent = location;
-    document.getElementById("user-age").textContent = age;
-    document.getElementById("user-posts").textContent = posts;
+document.addEventListener('DOMContentLoaded', () => {
+    const usuarios = document.querySelectorAll('.usuario'); // Selecciona los divs de usuario
+    const modal = document.getElementById('modal'); // Selecciona el modal
+    const closeModal = document.querySelector('.close'); // Selecciona el botón de cerrar
 
-    // Mostrar el modal
-    document.getElementById("usuario-modal").style.display = "flex";
-}
+    // Asegúrate de que el modal esté oculto inicialmente
+    modal.style.display = 'none';
 
-// Función para cerrar el modal
-function closeModal() {
-    // Ocultar el modal
-    document.getElementById("usuario-modal").style.display = "none";
-}
+    // Abre el modal al hacer clic en un usuario
+    usuarios.forEach(usuario => {
+        usuario.addEventListener('click', () => {
+            modal.style.display = 'flex'; // Mostrar modal
+        });
+    });
 
-// Agregar un evento para cerrar el modal si se hace clic fuera del modal
-window.onclick = function(event) {
-    if (event.target == document.getElementById("usuario-modal")) {
-        closeModal();
-    }
-};
+    // Cierra el modal al hacer clic en el botón de cierre
+    closeModal.addEventListener('click', () => {
+        modal.style.display = 'none'; // Ocultar modal
+    });
+
+    // Cierra el modal al hacer clic fuera del contenido
+    window.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+});

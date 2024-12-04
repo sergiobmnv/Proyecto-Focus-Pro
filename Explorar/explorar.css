@@ -181,52 +181,113 @@ header .logo {
 }
 
 /*--------------------------------------------------------------------*/
-/* Estilos para el modal */
+/* Modal background */
 .modal {
-    display: none; /* Oculto por defecto */
+    display: none;
     position: fixed;
-    z-index: 1;
+    z-index: 1000;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.4); /* Fondo oscuro */
-    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
     align-items: center;
+    justify-content: center;
 }
 
+/* Modal content */
 .modal-content {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    width: 60%;
+    width: 50%;
     max-width: 600px;
-    position: relative;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #1c1c1c;
+    border-radius: 15px;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-.close {
+/* Header section */
+.modal-header {
+    background-color: #fdd835; /* Amarillo */
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.modal-header img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.modal-header .username {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.modal-header .actions {
+    display: flex;
+    gap: 10px;
+}
+
+.modal-header .actions i {
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Main content */
+.modal-body {
+    background-color: #1976d2; /* Azul */
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.modal-body .info {
+    flex: 1;
+    min-width: 200px;
+}
+
+.modal-body .info div {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    padding: 10px;
+    background-color: #ffffff;
+    color: #000;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.modal-body .image {
+    flex: 1;
+    min-width: 200px;
+    text-align: center;
+}
+
+.modal-body .image img {
+    width: 100%;
+    max-width: 250px;
+    border-radius: 10px;
+}
+
+/* Close button */
+.modal .close {
     position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 30px;
+    top: 15px;
+    right: 20px;
+    font-size: 1.5rem;
+    color: #fff;
     cursor: pointer;
 }
 
-.user-info p {
-    font-size: 18px;
-    margin: 10px 0;
+.modal .close:hover {
+    color: #f44336;
 }
 
-button {
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-}
 
-button:hover {
-    background-color: #45a049;
-}
