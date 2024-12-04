@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Galeria</title>
+    <link rel="stylesheet" type="text/css" href="galeria.css">
+    <link rel="icon" href="Assert/Favicon-3.png" type="image/png">
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="Assert/Favicon-3.png" alt="Logo EF Fotografía">
+                <h1>Focus Pro</h1>
+            </div>
+            <h2 class="title">Tu galería fotográfica</h2>
+            <a href="../Main/main.html" class="back-link">Volver al estudio</a>
+        </div>
+    </header>
+
+    <div class="background-container">
+        <img src="Assert/Fondo-Galeria-2.jpg" alt="Fondo Galería" class="background-image" />
+
+        <div class="galeria">
+            <div class="imagenes">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="Assert/foto-1.jpg" alt="Foto 1" class="foto">
+                        </div>
+                        <div class="flip-card-back">
+                            <p><strong>Descripción:</strong> Camaleon.</p>
+                            <p><strong>Ubicación:</strong> Jungla</p>
+                            <p class="open-modal">Comentarios: 3</p>
+                            <p><strong>Me gusta:</strong> 45</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="iconos">
+                    <button class="icono"><img src="Assert/circulo.png" alt="Me gusta"></button>
+                    <button class="icono"><img src="Assert/estrella copy.png" alt="Añadir a favoritos"></button>
+                    <button class="icono"><img src="Assert/compartir.png" alt="Compartir"></button>
+                </div>
+            </div>
+
+            <div class="imagenes">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="Assert/foto-2.jpg" alt="Foto 1" class="foto">
+                        </div>
+                        <div class="flip-card-back">
+                            <p><strong>Descripción:</strong> Lobo.</p>
+                            <p><strong>Ubicación:</strong> Monte</p>
+                            <p class="open-modal">Comentarios: 3</p>
+                            <p><strong>Me gusta:</strong> 45</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="iconos">
+                    <button class="icono"><img src="Assert/circulo.png" alt="Me gusta"></button>
+                    <button class="icono"><img src="Assert/estrella copy.png" alt="Añadir a favoritos"></button>
+                    <button class="icono"><img src="Assert/compartir.png" alt="Compartir"></button>
+                </div>
+            </div>
+
+            <div class="imagenes">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="Assert/foto-3.jpg" alt="Foto 1" class="foto">
+                        </div>
+                        <div class="flip-card-back">
+                            <p><strong>Descripción:</strong> Casa Rural</p>
+                            <p><strong>Ubicación:</strong> Priego de cordoba</p>
+                            <p class="open-modal">Comentarios: 3</p>
+                            <p><strong>Me gusta:</strong> 45</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="iconos">
+                    <button class="icono"><img src="Assert/circulo.png" alt="Me gusta"></button>
+                    <button class="icono"><img src="Assert/estrella copy.png" alt="Añadir a favoritos"></button>
+                    <button class="icono"><img src="Assert/compartir.png" alt="Compartir"></button>
+                </div>
+            </div>
+
+            <div class="imagenes">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="Assert/foto-4.webp" alt="Foto 1" class="foto">
+                        </div>
+                        <div class="flip-card-back">
+                            <p><strong>Descripción:</strong> Gato Chulon.</p>
+                            <p><strong>Ubicación:</strong> Mi casa</p>
+                            <p class="open-modal">Comentarios: 3</p>
+                            <p><strong>Me gusta:</strong> 45</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="iconos">
+                    <button class="icono"><img src="Assert/circulo.png" alt="Me gusta"></button>
+                    <button class="icono"><img src="Assert/estrella copy.png" alt="Añadir a favoritos"></button>
+                    <button class="icono"><img src="Assert/compartir.png" alt="Compartir"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <!-- Modal -->
+        <div class="modal" id="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Comentarios</h2>
+                    <button class="close-modal">×</button>
+                </div>
+                <div class="modal-body">
+                    <ul>
+                        <li><strong>Usuario 1:</strong> ¡Qué foto tan increíble!</li>
+                        <li><strong>Usuario 2:</strong> Me encanta el contraste de colores.</li>
+                        <li><strong>Usuario 3:</strong> ¿Dónde fue tomada esta foto?</li>
+                    </ul>
+                    <div class="comment-input">
+                        <input type="text" placeholder="Escribe un comentario..." />
+                        <button>Publicar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <script src="galeria.js"></script>
+    
+</body>
+</html>
