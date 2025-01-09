@@ -112,25 +112,45 @@
     </div>
 
         <!-- Modal -->
-        <div class="modal" id="modal">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h2>Comentarios</h2>
-                    <button class="close-modal">×</button>
-                </div>
-                <div class="modal-body">
-                    <ul>
-                        <li><strong>Usuario 1:</strong> ¡Qué foto tan increíble!</li>
-                        <li><strong>Usuario 2:</strong> Me encanta el contraste de colores.</li>
-                        <li><strong>Usuario 3:</strong> ¿Dónde fue tomada esta foto?</li>
-                    </ul>
-                    <div class="comment-input">
-                        <input type="text" placeholder="Escribe un comentario..." />
-                        <button>Publicar</button>
-                    </div>
-                </div>
+<div class="modal hidden">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2>COMENTARIOS</h2>
+        <div class="comment user-blue" data-comment="Carloss__db: Asopla Ahi.">
+            <div class="user">
+                <div class="user-icon">👤</div>
+                <span class="username">Carloss__db:</span>
+                <span>Muy buena foto.</span>
             </div>
+            <div class="heart">❤️</div>
         </div>
+        <div class="comment user-red" data-comment="Sergiiobm: Increíble.">
+            <div class="user">
+                <div class="user-icon">👤</div>
+                <span class="username">Sergiiobm:</span>
+                <span>Increíble.</span>
+            </div>
+            <div class="heart">❤️</div>
+        </div>
+        <div class="comment user-yellow" data-comment="Miguel02: Nada mal.">
+            <div class="user">
+                <div class="user-icon">👤</div>
+                <span class="username">Miguel02:</span>
+                <span>Nada mal.</span>
+            </div>
+            <div class="heart">❤️</div>
+        </div>
+        <div class="comment user-green" data-comment="RubenBellón: Buena Foto Bro.">
+            <div class="user">
+                <div class="user-icon">👤</div>
+                <span class="username">RubenBellón:</span>
+                <span>Buena Foto Bro.</span>
+            </div>
+            <div class="heart">❤️</div>
+        </div>
+    </div>
+</div>
+
 
     <script src="galeria.js"></script>
     

@@ -2,11 +2,11 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Asegura que padding y bordes no desborden los contenedores */
+    box-sizing: border-box;
 }
 
 img {
-    display: block; /* Elimina espacio extra en imágenes */
+    display: block;
 }
 
 button {
@@ -19,7 +19,10 @@ button {
 /* Estilo global */
 body {
     font-family: Arial, sans-serif;
-    overflow: hidden; /* Mantén oculto el scroll si necesario */
+    overflow: hidden; /* No permite scroll */
+    height: 100vh; /* Altura fija de la pantalla */
+    background-color: #000; /* Fondo negro para resaltar la galería */
+    color: white;
 }
 
 header {
@@ -38,9 +41,8 @@ header {
 }
 
 .title {
-    font-size: 30px;
+    font-size: 24px;
     font-weight: normal;
-    text-align: center;
 }
 
 .logo {
@@ -61,16 +63,21 @@ header {
     border: 1px solid white;
     padding: 5px 10px;
     border-radius: 5px;
+    transition: background-color 0.3s;
 }
 
-/* Contenedor principal */
+.back-link:hover {
+    background-color: white;
+    color: black;
+}
+
+/* Fondo y contenedor principal */
 .background-container {
     position: relative;
     width: 100%;
     height: 100vh;
     background-size: cover;
     background-position: center;
-    overflow: hidden; /* Asegúrate de no cortar la galería */
 }
 
 .background-image {
@@ -92,39 +99,32 @@ header {
     width: 80%;
 }
 
-/* Estilo de las imágenes */
 .imagenes {
     position: relative;
-    width: 100%;
-    height: 250px;
-    overflow: hidden;
+    height: 300px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8); /* Oscurece más la sombra */
-    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro para toda la tarjeta */
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
 }
 
-
-/* Contenedor flip card */
+/* Tarjetas flip */
 .flip-card {
-    background-color: transparent;
-    width: 100%;
-    height: calc(100% - 50px); /* Ajusta el espacio para los iconos */
     perspective: 1000px;
+    height: 100%;
 }
 
 .flip-card-inner {
     position: relative;
-    width: 100%;
     height: 100%;
-    transition: transform 0.6s;
+    width: 100%;
     transform-style: preserve-3d;
+    transition: transform 0.6s ease;
 }
 
 .imagenes:hover .flip-card-inner {
     transform: rotateY(180deg);
 }
 
-/* Cara frontal y trasera */
 .flip-card-front,
 .flip-card-back {
     position: absolute;
@@ -132,7 +132,6 @@ header {
     height: 100%;
     backface-visibility: hidden;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .flip-card-front {
@@ -143,14 +142,15 @@ header {
 }
 
 .flip-card-back {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.8);
     color: white;
     transform: rotateY(180deg);
-    padding: 15px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    padding: 15px;
 }
 
 .foto {
@@ -163,164 +163,105 @@ header {
 /* Iconos */
 .iconos {
     display: flex;
-    justify-content: center; /* Centra los botones horizontalmente */
-    gap: 10px; /* Espaciado entre botones */
-    margin-top: 10px; /* Espacio entre la imagen y los iconos */
-}
-
-.icono {
-    background: none;
-    border: none;
-    cursor: pointer;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
 }
 
 .icono img {
     width: 30px;
     height: 30px;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s;
 }
 
 .icono:hover img {
     transform: scale(1.2);
 }
 
-/* Media Query para pantallas pequeñas */
+/* Estilo del modal */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed; /* Fijo en la pantalla */
+    z-index: 1000; /* Por encima de otros elementos */
+    left: 0;
+    top: 0;
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Alto completo */
+    overflow: auto; /* Habilitar scroll si es necesario */
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro con opacidad */
+}
+
+/* Contenido del modal */
+.modal-content {
+    background-color: #001f3f96; /* Negro marino */
+    color: #ffffff; /* Color de texto blanco */
+    border-radius: 8px;
+    padding: 20px;
+    width: 800px; /* Ancho más amplio */
+    margin: auto;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Estilo para los comentarios */
+.comment {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative; /* Para el posicionamiento del botón de like */
+}
+
+/* Estilo para el nombre del usuario */
+.username {
+    font-weight: bold;
+}
+
+/* Colores para los nombres de usuario */
+.user-blue { color: #1E90FF; } /* Azul */
+.user-red { color: #FF4500; } /* Rojo */
+.user-yellow { color: #FFD700; } /* Amarillo */
+.user-green { color: #32CD32; } /* Verde */
+
+/* Estilo para el texto del comentario */
+.comment-text {
+    color: #ffffff; /* Comentarios en blanco */
+    display: inline-block; /* Para que el texto del comentario y el like se alineen correctamente */
+}
+
+/* Estilo para el botón de like */
+.heart {
+    position: absolute;
+    right: 10px; /* A la derecha */
+    top: 10px; /* Ajustar según sea necesario */
+    font-size: 20px; /* Tamaño del icono de like */
+    color: #00bfff; /* Color del botón de like */
+}
+
+/* Estilo para el botón de cerrar el modal */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
+
+/* Media Queries */
 @media (max-width: 768px) {
     .galeria {
         grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
     }
 
     .imagenes {
-        height: 200px; /* Ajusta la altura */
+        height: 200px;
+    }
+
+    .modal-content {
+        width: 95%;
     }
 }
-
-
-/* Fondo del modal */
-.modal {
-    display: none; /* Oculto por defecto */
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro */
-    z-index: 1000;
-    align-items: center;
-    justify-content: center;
-    transition: opacity 0.3s ease-in-out;
-}
-
-/* Contenido del modal */
-.modal-content {
-    background: #1c1c1c; /* Fondo oscuro y elegante */
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-    width: 90%;
-    max-width: 600px;
-    padding: 20px;
-    text-align: left;
-    transform: scale(0.9);
-    transition: transform 0.3s ease-in-out;
-    color: #fff;
-}
-
-/* Cabecera del modal (título y botón de cerrar) */
-.modal-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 2px solid #444;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-}
-
-.modal-header h2 {
-    font-size: 20px;
-    margin: 0;
-    font-weight: 600;
-}
-
-.close-modal {
-    background: none;
-    border: none;
-    color: #fff;
-    font-size: 28px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-.close-modal:hover {
-    color: #e74c3c; /* Rojo cuando pasa el cursor */
-}
-
-/* Cuerpo del modal */
-.modal-body {
-    max-height: 400px;
-    overflow-y: auto;
-}
-
-.modal-body ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-.modal-body li {
-    font-size: 16px;
-    margin-bottom: 12px;
-    color: #ccc;
-}
-
-.comment-input {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 20px;
-}
-
-.comment-input input {
-    width: 80%;
-    padding: 8px;
-    font-size: 16px;
-    border: 1px solid #444;
-    border-radius: 20px;
-    background-color: #333;
-    color: #fff;
-    transition: background-color 0.3s;
-}
-
-.comment-input input:focus {
-    background-color: #444;
-    outline: none;
-}
-
-.comment-input button {
-    padding: 8px 16px;
-    background-color: #0099ff; /* Azul claro */
-    color: #fff;
-    border: none;
-    border-radius: 20px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.comment-input button:hover {
-    background-color: #006bb3;
-}
-
-/* Estilo del texto de apertura */
-.open-modal {
-    color: #0099ff;
-    cursor: pointer;
-    text-decoration: underline;
-    font-size: 18px;
-}
-
-.open-modal:hover {
-    color: #006bb3;
-}
-
-
