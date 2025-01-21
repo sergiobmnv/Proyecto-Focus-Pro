@@ -21,7 +21,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px;
+    padding: 30px;
     background-color: #1c1c1c;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     z-index: 100;
@@ -32,8 +32,16 @@ header .logo img {
     height: 40px;
 }
 
-header form input {
-    padding: 8px;
+/* Estilos del formulario de búsqueda */
+header form {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Espacio entre los elementos del formulario */
+    height: 100px;
+}
+
+header form input[type="text"] {
+    padding: 10px;
     border: none;
     border-radius: 20px;
     width: 250px;
@@ -42,8 +50,37 @@ header form input {
     outline: none;
 }
 
-header form input::placeholder {
+header form input[type="text"]::placeholder {
     color: #aaa;
+}
+
+header form select {
+    padding: 8px;
+    border: none;
+    border-radius: 20px;
+    background-color: #2a2a2a;
+    color: white;
+    outline: none;
+}
+
+header form select option {
+    background-color: #2a2a2a;
+    color: white;
+}
+
+/* Botón de búsqueda */
+header form button {
+    padding: 5px 12px;
+    background-color: #0099ff;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+header form button:hover {
+    background-color: #006bb3;
 }
 
 /* Fondo de la página */

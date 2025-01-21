@@ -20,7 +20,35 @@
         </a>
         
         <form>
-            <input type="text" placeholder="Buscar">
+            <div>
+                <input type="text" placeholder="Buscar fotógrafos o fotos" aria-label="Buscar">
+            </div>
+            <div>
+                <label for="categoria">Categoría:</label>
+                <select id="categoria" name="categoria">
+                    <option value="">Selecciona una categoría</option>
+                    <option value="paisaje">Paisaje</option>
+                    <option value="retrato">Retrato</option>
+                    <option value="macro">Macro</option>
+                    <option value="eventos">Eventos</option>
+                    <option value="moda">Moda</option>
+                </select>
+            </div>
+            <div>
+                <label for="ubicacion">Recientes:</label>
+                <input type="text" id="ubicacion" name="ubicacion" placeholder="Buscar Recientes">
+            </div>
+            <div>
+                <label for="tipo-camara">Popularidad:</label>
+                <select id="tipo-camara" name="tipo-camara">
+                    <option value="">Buscar lo mas visitado</option>
+                    <option value="dslr">DSLR</option>
+                    <option value="mirrorless">Mirrorless</option>
+                    <option value="compacta">Compacta</option>
+                    <option value="telescopica">Telescópica</option>
+                </select>
+            </div>
+            <button type="submit">Buscar</button>
         </form>
 
     </header>
