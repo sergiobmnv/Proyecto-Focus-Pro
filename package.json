@@ -2,9 +2,9 @@
   "name": "proyecto-disenio",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "galeria.js",
   "scripts": {
-    "start": "main.html",
+    "start": "node galeria.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
