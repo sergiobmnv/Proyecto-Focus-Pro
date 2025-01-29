@@ -140,3 +140,27 @@ a:hover {
     text-decoration: underline;
     color: #003f91;
 }
+
+.btn-enviar {
+    display: inline-block;
+    margin-top: 20px;
+    width: 80%;
+    background: #00d9ff;
+    color: #000;
+    padding: 10px;
+    text-align: center;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+/* Efectos al pasar el mouse sobre el enlace estilizado como botón */
+.btn-enviar:hover {
+    background: #007fff;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+}
